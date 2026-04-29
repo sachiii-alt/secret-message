@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Hey...</title>
+
+<style>
+body {
+    margin: 0;
+    height: 100vh;
+    background: linear-gradient(135deg, #ff758c, #ff7eb3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Segoe UI', sans-serif;
+    overflow: hidden;
+}
+
+.card {
+    background: rgba(255, 255, 255, 0.15);
+    padding: 50px 70px;
+    border-radius: 25px;
+    color: white;
+    backdrop-filter: blur(12px);
+    box-shadow: 0 0 40px rgba(255,255,255,0.3);
+    width: 750px;
+    max-width: 90vw;
+    text-align: center;
+}
+
+/* hide inputs */
+input {
+    display: none;
+}
+
+/* button style */
+label {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 22px;
+    background: white;
+    color: #ff4e88;
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+label:hover {
+    background: #ff4e88;
+    color: white;
+}
+
+/* hide screens */
+.s2, .s3, .s4, .s5 {
+    display: none;
+}
+
+/* flow control */
+#s1:checked ~ .s2 { display: block; }
+#s1:checked ~ .s1 { display: none; }
+
+#s2:checked ~ .s3 { display: block; }
+#s2:checked ~ .s2 { display: none; }
+
+#s3:checked ~ .s4 { display: block; }
+#s3:checked ~ .s3 { display: none; }
+
+#s4:checked ~ .s5 { display: block; }
+#s4:checked ~ .s4 { display: none; }
+
+/* images */
+.images {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.images img {
+    width: 180px;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 20px;
+    animation: float 3s infinite ease-in-out;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+}
+
+@keyframes float {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-12px); }
+    100% { transform: translateY(0); }
+}
+
+/* FINAL SCREEN FADE-IN */
+.fade-in {
+    opacity: 0;
+    animation: fadeIn 3s ease forwards;
+    text-align: left;      /* ✅ left aligned confession */
+    line-height: 1.6;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* remove extra spacing for clean letter look */
+.s5 h3 {
+    margin: 0;
+}
+
+</style>
+
+</head>
+<body>
+
+<div class="card">
+
+<!-- CHECKBOXES -->
+<input type="checkbox" id="s1">
+<input type="checkbox" id="s2">
+<input type="checkbox" id="s3">
+<input type="checkbox" id="s4">
+
+<!-- SCREEN 1 -->
+<div class="s1">
+    <h1>Hi, (Name) 👋</h1>
+    <label for="s1">Click</label>
+</div>
+
+<!-- SCREEN 2 -->
+<div class="s2">
+    <h2>3 Cute pictures of yours 💕</h2>
+
+    <div class="images">
+        <img src="https://via.placeholder.com/200">
+        <img src="https://via.placeholder.com/200">
+        <img src="https://via.placeholder.com/200">
+    </div>
+
+    <label for="s2">Click</label>
+</div>
+
+<!-- SCREEN 3 -->
+<div class="s3">
+    <h2>You know what??</h2>
+    <label for="s3">yes what</label>
+</div>
+
+<!-- SCREEN 4 -->
+<div class="s4">
+    <h2>I realize that...</h2>
+    <label for="s4">realize of what?</label>
+</div>
+
+<!-- SCREEN 5 -->
+<div class="s5 fade-in">
+    <h3>
+I’ve been wanting to tell you something for a while now, and I think it’s time I finally say it. I really like you, and I have liked you for a long time already. Being around you makes my day better, even in small ways you probably don’t notice. I don’t know how you feel, and I’m not trying to pressure you into anything—I just didn’t want to keep it to myself anymore. You’re really important to me, and I just wanted you to know how I truly feel.
+
+<br><br>
+
+I like you. Not just as a friend, but something more than that.
+
+<br><br>
+
+And I’ve been holding this feeling for a long time.
+
+<br><br>
+
+So yeah... that’s what I realized 💖
+    </h3>
+</div>
+
+</div>
+
+</body>
+</html>
