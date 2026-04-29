@@ -8,15 +8,58 @@
 body {
     margin: 0;
     height: 100vh;
-    background: linear-gradient(135deg, #ff758c, #ff7eb3);
+    font-family: 'Segoe UI', sans-serif;
+    overflow: hidden;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-family: 'Segoe UI', sans-serif;
-    overflow: hidden;
+    background: linear-gradient(135deg, #ff758c, #ff7eb3);
 }
 
+/* 💖 FLOATING HEART BACKGROUND */
+.hearts {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 0;
+}
+
+.hearts span {
+    position: absolute;
+    bottom: -50px;
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 20px;
+    animation: floatUp 10s linear infinite;
+}
+
+@keyframes floatUp {
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 0;
+    }
+    20% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-110vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+/* random heart positions */
+.hearts span:nth-child(1) { left: 10%; animation-delay: 0s; }
+.hearts span:nth-child(2) { left: 20%; animation-delay: 2s; }
+.hearts span:nth-child(3) { left: 35%; animation-delay: 4s; }
+.hearts span:nth-child(4) { left: 50%; animation-delay: 1s; }
+.hearts span:nth-child(5) { left: 65%; animation-delay: 3s; }
+.hearts span:nth-child(6) { left: 80%; animation-delay: 5s; }
+.hearts span:nth-child(7) { left: 90%; animation-delay: 6s; }
+
+/* CARD */
 .card {
+    position: relative;
+    z-index: 2;
     background: rgba(255, 255, 255, 0.15);
     padding: 50px 70px;
     border-radius: 25px;
@@ -33,7 +76,7 @@ input {
     display: none;
 }
 
-/* button style */
+/* buttons */
 label {
     display: inline-block;
     margin-top: 20px;
@@ -51,12 +94,12 @@ label:hover {
     color: white;
 }
 
-/* hide screens */
+/* screens */
 .s2, .s3, .s4, .s5 {
     display: none;
 }
 
-/* flow control */
+/* flow */
 #s1:checked ~ .s2 { display: block; }
 #s1:checked ~ .s1 { display: none; }
 
@@ -92,11 +135,11 @@ label:hover {
     100% { transform: translateY(0); }
 }
 
-/* FINAL SCREEN FADE-IN */
+/* final screen */
 .fade-in {
     opacity: 0;
     animation: fadeIn 3s ease forwards;
-    text-align: left;      /* ✅ left aligned confession */
+    text-align: left;
     line-height: 1.6;
 }
 
@@ -105,15 +148,24 @@ label:hover {
     to { opacity: 1; transform: translateY(0); }
 }
 
-/* remove extra spacing for clean letter look */
 .s5 h3 {
     margin: 0;
 }
-
 </style>
 
 </head>
 <body>
+
+<!-- 💖 BACKGROUND HEARTS -->
+<div class="hearts">
+    <span>💖</span>
+    <span>💗</span>
+    <span>💞</span>
+    <span>💕</span>
+    <span>💓</span>
+    <span>💖</span>
+    <span>💗</span>
+</div>
 
 <div class="card">
 
@@ -144,32 +196,34 @@ label:hover {
 
 <!-- SCREEN 3 -->
 <div class="s3">
-    <h2>You know what??</h2>
-    <label for="s3">yes what</label>
+    <h2>kabalo ba ka?</h2>
+    <label for="s3">nga unsa?</label>
 </div>
 
 <!-- SCREEN 4 -->
 <div class="s4">
-    <h2>I realize that...</h2>
-    <label for="s4">realize of what?</label>
+    <h2>ngaa...</h2>
+    <label for="s4">???</label>
 </div>
 
 <!-- SCREEN 5 -->
 <div class="s5 fade-in">
     <h3>
-I’ve been wanting to tell you something for a while now, and I think it’s time I finally say it. I really like you, and I have liked you for a long time already. Being around you makes my day better, even in small ways you probably don’t notice. I don’t know how you feel, and I’m not trying to pressure you into anything—I just didn’t want to keep it to myself anymore. You’re really important to me, and I just wanted you to know how I truly feel.
+I think it's time najud nga iingon na nako ni. Dianne gusto jud tika bai sauna pa like I really really like you jud bai long time already. Kay everytime nga mag-dungan ta mabuo jud akong adlaw HAHAHAH, bisag sa mga gamay nga butang dili lang nimo ma bantayan. Karon wala ko kabalo unsa imong ma feel and wala tika gina pressure. Kapoy na kaayo sig tago ani nga feelings HAHAHA, because "You’ve become someone really special to me". Dili na mag matter kung unsa man imong matubag, ang akoa lang jud is ipagawas akong tinuod nga feelings mao rato HAHAHHHA.
+
+napansin pud ba nimo recent days wala na kayko naga flirt o kanang naga padungog dungog sa gc, tungod man gud atong nag dowload kog threads nga app sa cp nako then nakita nako imong profile sa friends suggestion and gi check nako naa man koy nabasahan nga "in a relationship ka" and nag talk ko kay jess and naa daw kay gi ingon saiya before nga naa nakay someone sauna rapud daw ni nimo gi ingon. So mao to, dapat dili ko naga flirt saimoha kay naa ka someone:<.
 
 <br><br>
 
-I like you. Not just as a friend, but something more than that.
+Please ikaw ra makabalo ani lowkey lowkey lang hehe:> don't tell to anyone ha nag confess nako saimo.
 
 <br><br>
 
-And I’ve been holding this feeling for a long time.
+If unsa man imong answer ako ra makabalo:>>
 
 <br><br>
 
-So yeah... that’s what I realized 💖
+💖💖💖💖💖
     </h3>
 </div>
 
